@@ -55,9 +55,13 @@ where
 /// 
 /// # Example
 /// ```
-///     use algocol::sort::insertionsort::insertionsort;
+///     use algocol::sort::insertionsort::insertionsort_by;
 ///     let mut array = [5, 4, 3, 2, 1];
-///     insertionsort(&mut array[..], true).unwrap(); // 10 operations are made.
+///     insertionsort_by(
+///         &mut array[..],
+///         true,
+///         |a, b| a.cmp(b)
+///     ).unwrap(); // 10 operations are made.
 ///     assert_eq!(array, [1, 2, 3, 4, 5]);
 /// ```
 pub fn insertionsort_by<F, S, T>(

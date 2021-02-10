@@ -47,12 +47,14 @@ pub mod bubblesort;
 pub mod insertionsort;
 pub mod mergesort;
 pub mod selectionsort;
+pub mod timsort;
 
 pub use crate::sort::{
     bubblesort::*,
     insertionsort::*,
     mergesort::*,
-    selectionsort::*
+    selectionsort::*,
+    timsort::*
 };
 
 pub use self::{
@@ -74,6 +76,10 @@ pub use self::{
     selectionsort::{
         selectionsort as s_select_i,
         selectionsort_by as s_select_if
+    },
+    timsort::{
+        timsort as s_tim_i,
+        timsort_by as s_tim_if
     }
 };
 

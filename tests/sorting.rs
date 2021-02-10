@@ -49,7 +49,6 @@ fn test_merge() {
     assert_eq!(array, [7, 6, 1, 2, 3, 4, 5, 6, 8, 20]);
 }
 
-/*
 #[test]
 fn test_mergesort_recursive() {
     use algocol::sort::mergesort;
@@ -59,4 +58,16 @@ fn test_mergesort_recursive() {
     println!("mergesort_recursive: {:?}", sequence);
     assert_eq!(sequence, [1,2,3,4,5]);
 }
-*/
+
+#[test]
+fn test_timsort() {
+    use algocol::sort::timsort::{timsort_by, DEFAULT_RUN};
+    let mut sequence = (0..100).collect::<Vec<i32>>();
+    sequence.reverse();
+    let result = timsort_by(
+        &mut sequence[..], true, DEFAULT_RUN, |a, b| a.cmp(b)
+    );
+    println!("timsort result: {:?}", result);
+    println!("timsort: {:?}", sequence);
+    assert_eq!(sequence, (0..100).collect::<Vec<i32>>());
+}

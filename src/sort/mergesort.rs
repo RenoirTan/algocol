@@ -200,9 +200,6 @@ where
     Ok(sequence)
 }
 
-#[warn(unstable_features)]
-/// ***UNSTABLE***
-/// 
 /// This function sorts an unordered slice using the merge sort algorithm.
 /// This function works by splitting the sequence into smaller slices
 /// recursively and sorting them one by one, before working its way up by
@@ -230,9 +227,6 @@ where
     mergesort_recursively_by(sequence, ascending, |a: &T, b: &T| a.cmp(b))
 }
 
-#[warn(unstable_features)]
-/// ***UNSTABLE***
-///
 /// Iterative merge sort with a compare functions which determines the order
 /// of 2 elements in the sequence. This function works by splitting the
 /// sequence into smaller slices recursively and sorting them one by one,
@@ -267,6 +261,6 @@ where
     let middle = length/2;
     mergesort_recursively_by(&mut sequence[..middle], ascending, compare)?;
     mergesort_recursively_by(&mut sequence[middle..], ascending, compare)?;
-    merge(sequence, 0, middle, length-1, ascending, compare)?;
+    merge(sequence, 0, middle-1, length-1, ascending, compare)?;
     Ok(sequence)
 }

@@ -1,4 +1,4 @@
-# algocol v0.2.1
+# algocol v0.2.2
 
 ## *By Renoir Tan*
 
@@ -55,3 +55,8 @@ The following suffix parts are used in this crate as of version **0.2.1**:
 1. `i`: This function is iterative (as opposed to recursive)
 2. `r`: This function is recursive
 3. `f`: This function requires an auxiliary function
+
+## Version 0.2.2
+
+1. Added `timsort`.
+2. Fixed `mergesort_recursive` and `mergesort_recursively_by`.

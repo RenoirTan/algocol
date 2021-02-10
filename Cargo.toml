@@ -1,0 +1,15 @@
+[package]
+name = "algocol"
+version = "0.2.1"
+authors = ["RenoirTan <renoirtan2005@gmail.com>"]
+edition = "2018"
+description = "A (col)lection of (algo)rithms"
+readme = "README.md"
+license-file = "LICENSE"
+test = true
+bench = false
+crate-type = ["lib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

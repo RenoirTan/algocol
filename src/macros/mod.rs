@@ -2,15 +2,34 @@
 
 /// Check if a slice is already sorted by checking if the length of the slice
 /// less than or equal to 1. If so, it runs an expression.
+/// 
+/// This macro can be used in constant functions.
+/// 
+/// # Example
+/// 
+/// ```
+///     use algocol::alreadysorted;
+///     pub const fn is_sorted<T>(slice: &[T]) -> bool {
+///         already_sorted!(slice.len() boolean)
+///     }
+/// ```
 #[macro_export]
 macro_rules! alreadysorted {
     () => {
         return Ok(());
     };
-    ($length: expr) => {
+    (result $length: expr) => {
         if $length <= 1 {
             return Ok(());
         }
+    };
+    (result $length: expr, return $value: expr) => {
+        if $length <= 1 {
+            return Ok($value);
+        }
+    };
+    (bool $length: expr) => {
+        $length <= 1
     };
     ($length: expr, $then: expr) => {
         if $length <= 1 {$then}

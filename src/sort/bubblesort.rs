@@ -5,6 +5,7 @@ use std::{
     cmp::{Ord, Ordering}
 };
 use crate::{
+    alreadysorted,
     error::AgcResult,
     utils::priority
 };
@@ -66,9 +67,7 @@ where
 {   
     let sequence = sequence.as_mut();
     let length = sequence.len();
-    if length <= 1 {
-        return Ok(sequence);
-    }
+    alreadysorted!(result length, return sequence);
     let mut sorted = false;
     if ascending {
         while !sorted {

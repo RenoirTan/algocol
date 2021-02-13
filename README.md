@@ -1,4 +1,4 @@
-# algocol v0.2.2
+# algocol v0.2.3
 
 ## *By Renoir Tan*
 
@@ -22,3 +22,4 @@ implements the correct traits and use the functions defined here.
 3. Insertion Sort
 4. Merge Sort (including its affiliated merge function)
 5. Tim Sort
+6. Quick Sort (including its affiliated partition function)

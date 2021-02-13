@@ -10,11 +10,6 @@ use crate::{
     utils::{priority, slice::transfer_element}
 };
 
-#[warn(deprecated_in_future)]
-/// **This function is only meant to be used by the functions in this crate.
-/// However, it has been set to public to allow doctests to be run. In future
-/// releases, this function may become private.**
-/// 
 /// This is the merge algorithm used by merge sort. This function takes a
 /// contiguous segment of a slice, and merges the 2 parts of the slices into
 /// one ordered slice. It assumes that the 2 sub-slices are already sorted in
@@ -179,7 +174,7 @@ where
 {
     let sequence = sequence.as_mut();
     let length = sequence.len();
-    alreadysorted!(length, {return Ok(sequence);});
+    alreadysorted!(result length, return sequence);
     let mut size: usize = 1;
     // Size of each sub-slice
     while size < length {
@@ -195,7 +190,7 @@ where
             let right = min(left+2*size-1, length-1);
             merge(sequence, left, middle, right, ascending, &compare)?;
         }
-        size *= 2;
+        size <<= 1;
     }
     Ok(sequence)
 }

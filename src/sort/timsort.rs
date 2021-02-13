@@ -89,7 +89,7 @@ where
 {
     let sequence = sequence.as_mut();
     let length = sequence.len();
-    alreadysorted!(length, {return Ok(sequence);});
+    alreadysorted!(result length, return sequence);
     // If the slice is less than run size, you can use insertion sort on it
     // directly.
     if length <= run {
@@ -116,7 +116,7 @@ where
             let right = min(left+2*size-1, length-1);
             merge(sequence, left, middle, right, ascending, compare)?;
         }
-        size *= 2;
+        size <<= 1;
     }
     Ok(sequence)
 }

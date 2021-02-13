@@ -75,7 +75,7 @@ where
 {
     let sequence = sequence.as_mut();
     let length = sequence.len();
-    alreadysorted!(length, {return Ok(sequence);});
+    alreadysorted!(result length, return sequence);
     for index in 1..length {
         let mut location = index - 1;
         while if ascending {

@@ -1,4 +1,4 @@
-# algocol v0.2.2
+# algocol v0.2.3
 
 ## *By Renoir Tan*
 
@@ -34,8 +34,8 @@ Add re-exports for algorithms with explanations on the affixes used by the
 new re-exported names.
 
 Some functions in this crate have been re-exported with shortened names
-with useful classification affixes. For example,
-`algocol::sort::mergesort_recursively_by` is re-exported as
+with useful classification affixes in the format `<prefix>_<name>_<suffixes>`.
+For example, `algocol::sort::mergesort_recursively_by` is re-exported as
 `s_merge_rf`. The `s` prefix means that this function sorts a sequence
 such as a slice. `merge` is the algorithm that the function uses to sort
 the slice. `rf` is actually a compound suffix. `r` means that the function
@@ -60,3 +60,17 @@ The following suffix parts are used in this crate as of version **0.2.1**:
 
 1. Added `timsort`.
 2. Fixed `mergesort_recursive` and `mergesort_recursively_by`.
+
+## Version 0.2.3
+
+1. Added `quicksort` and its associated `partition` function.
+2. Modified `algocol::alreadysorted` to return an `Ok($value)` if the
+   sequence is already sorted using this syntax:
+
+   ```rust
+   alreadysorted!(result length, return something);
+   ```
+
+   The `result` at the start tells the macro that if the length of the slice
+   is 1 or less, return `Ok(something)`.
+3. Use bitshift left instead of multiply to marginally improve performance.

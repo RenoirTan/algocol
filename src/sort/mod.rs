@@ -46,6 +46,7 @@ use crate::utils::priority;
 pub mod bubblesort;
 pub mod insertionsort;
 pub mod mergesort;
+pub mod quicksort;
 pub mod selectionsort;
 pub mod timsort;
 
@@ -53,6 +54,7 @@ pub use crate::sort::{
     bubblesort::*,
     insertionsort::*,
     mergesort::*,
+    quicksort::*,
     selectionsort::*,
     timsort::*
 };
@@ -72,6 +74,9 @@ pub use self::{
         mergesort_by as s_merge_if,
         mergesort_recursively as s_merge_r,
         mergesort_recursively_by as s_merge_rf
+    },
+    quicksort::{
+        partition
     },
     selectionsort::{
         selectionsort as s_select_i,

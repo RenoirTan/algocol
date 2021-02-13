@@ -71,3 +71,40 @@ fn test_timsort() {
     println!("timsort: {:?}", sequence);
     assert_eq!(sequence, (0..100).collect::<Vec<i32>>());
 }
+
+#[test]
+fn test_quicksort() {
+    use algocol::sort::quicksort::quicksort_by;
+    let mut sequence = (0..100).collect::<Vec<i32>>();
+    sequence.reverse();
+    let result = quicksort_by(
+        &mut sequence[..], true, |a, b| a.cmp(b)
+    );
+    println!("quicksort result: {:?}", result);
+    println!("quicksort: {:?}", sequence);
+    assert_eq!(sequence, (0..100).collect::<Vec<i32>>());
+}
+
+#[test]
+fn test_quicksort_recursive() {
+    use algocol::sort::quicksort::quicksort_recursively;
+    let mut sequence = (0..100).collect::<Vec<i32>>();
+    sequence.reverse();
+    let result = quicksort_recursively(
+        &mut sequence[..], true
+    );
+    println!("quicksort_recursive result: {:?}", result);
+    println!("quicksort_recursive: {:?}", sequence);
+    assert_eq!(sequence, (0..100).collect::<Vec<i32>>());
+}
+
+#[test]
+fn test_partition() {
+    use algocol::sort::quicksort::partition;
+    let mut sequence = [10, 80, 30, 90, 40, 50, 70];
+    let result = partition(&mut sequence, 0, 7, true, |a, b| a.cmp(b));
+    println!("quicksort result: {:?}", result);
+    println!("quicksort: {:?}", sequence);
+    assert_eq!(sequence, [10, 30, 40, 50, 70, 90, 80]);
+    assert!(matches!(result, Ok(4)));
+}

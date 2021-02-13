@@ -67,7 +67,7 @@ where
 {
     let sequence = sequence.as_mut();
     let length = sequence.len();
-    alreadysorted!(length, {return Ok(sequence);});
+    alreadysorted!(result length, return sequence);
     for subsequence in 0..length {
         let mut extreme: usize = subsequence;
         for (index, element) in sequence.iter().enumerate() {

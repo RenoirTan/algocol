@@ -35,3 +35,27 @@ macro_rules! alreadysorted {
         if $length <= 1 {$then}
     }
 }
+
+/// Convert `Option<T>` into `T` if `Some(T)` or return
+/// `Err(AgcError)` if `None`.
+#[macro_export]
+macro_rules! agctryoption {
+    ($option: expr) => {
+        match option {
+            Some(thing) => thing,
+            None => return Err($crate::AgcError::new(
+                $crate::AgcErrorKind::NotFound,
+                "Could not be found."
+            ))
+        }
+    };
+    ($option: expr, $desc: expr) => {
+        match option {
+            Some(thing) => thing,
+            None => return Err($crate::AgcError::new(
+                $crate::AgcErrorKind::NotFound,
+                $desc
+            ))
+        }
+    }
+}

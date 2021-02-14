@@ -1,6 +1,6 @@
 [package]
 name = "algocol"
-version = "0.2.3"
+version = "0.3.0"
 authors = ["RenoirTan <renoirtan2005@gmail.com>"]
 edition = "2018"
 description = "A (col)lection of (algo)rithms"
@@ -13,3 +13,5 @@ crate-type = ["lib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+num = "~0.3"
+num-traits = "~0.2"

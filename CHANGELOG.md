@@ -1,4 +1,4 @@
-# algocol v0.2.3
+# algocol v0.3.0
 
 ## *By Renoir Tan*
 
@@ -74,3 +74,10 @@ The following suffix parts are used in this crate as of version **0.2.1**:
    The `result` at the start tells the macro that if the length of the slice
    is 1 or less, return `Ok(something)`.
 3. Use bitshift left instead of multiply to marginally improve performance.
+
+## Version 0.3.0
+
+1. Add structs for representing graphs, nodes and edges.
+2. Add automatic traits in `algocol::traits`. These automatically implemented
+   traits are not to be confused with the traits defined using the `auto trait`
+   syntax in nightly Rust.

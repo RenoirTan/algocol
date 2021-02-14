@@ -1,4 +1,4 @@
-# algocol v0.2.3
+# algocol v0.3.0
 
 ## *By Renoir Tan*
 

@@ -4,7 +4,7 @@
 //! defined in `std`.
 
 use std::{
-    convert::Into,
+    convert::{Into},
     error,
     fmt
 };
@@ -17,6 +17,9 @@ pub enum AgcErrorKind {
     OutOfBounds,
     WrongOrder,
     Unordered,
+    AlreadyExists,
+    SameNode,
+    NotFound,
     Other
 }
 
